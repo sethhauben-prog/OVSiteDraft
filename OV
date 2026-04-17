@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneValley – Supporting Startups Globally</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:    #008cdc;
+  --blue-dk: #0070b5;
+  --blue-lt: #e0f4fd;
+  --blue-bd: #9fd8f5;
+  --white:   #ffffff;
+  --off:     #f5f8fb;
+  --text:    #0b1f2e;
+  --muted:   #45647a;
+  --border:  #c6e4f5;
+  --fds:     'DM Serif Display',serif;
+  --fbd:     'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font-family:var(--fbd);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:68px;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn-ghost{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;background:none;border:none;cursor:pointer;font-family:var(--fbd);transition:color .2s}
+.btn-ghost:hover{color:#fff}
+.btn-nav{background:var(--blue);color:#fff;font-size:14px;font-weight:600;font-family:var(--fbd);padding:9px 22px;border-radius:40px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn-nav:hover{background:var(--blue-dk);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:160px 24px 0;position:relative;overflow:hidden;background:linear-gradient(160deg,#e4f4fc 0%,#f0f8fd 40%,#ffffff 100%)}
+
+.hero-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(ellipse,rgba(0,140,220,.1) 0%,transparent 68%);pointer-events:none}
+
+.hero-title{font-family:var(--fds);font-size:clamp(46px,7vw,86px);font-weight:400;line-height:1.07;letter-spacing:-.02em;max-width:820px;margin-bottom:18px;color:var(--text);animation:fadeUp .7s .05s ease both;position:relative}
+.hero-title em{font-style:italic;color:var(--blue)}
+.hero-sub{font-size:18px;color:var(--muted);max-width:400px;line-height:1.6;margin-bottom:40px;animation:fadeUp .7s .15s ease both;position:relative}
+
+.hero-pills{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:48px;animation:fadeUp .7s .25s ease both;position:relative}
+.pills-row{display:flex;gap:10px;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:40px;padding:10px 22px;font-size:14px;font-weight:500;color:var(--text);cursor:pointer;text-decoration:none;transition:border-color .2s,background .2s,color .2s,transform .15s,box-shadow .2s;box-shadow:0 1px 6px rgba(0,140,220,.07)}
+.pill:hover{border-color:var(--blue);background:var(--blue-lt);color:var(--blue-dk);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,140,220,.15)}
+
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;animation:fadeUp .7s .35s ease both;position:relative}
+.btn-hero{background:var(--blue);color:#fff;font-size:15px;font-weight:600;font-family:var(--fbd);padding:14px 32px;border-radius:40px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,140,220,.3)}
+.btn-hero:hover{background:var(--blue-dk);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,140,220,.35)}
+.btn-ghost2{color:var(--muted);font-size:15px;font-family:var(--fbd);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.btn-ghost2:hover{color:var(--blue)}
+.btn-ghost2 svg{transition:transform .2s}
+.btn-ghost2:hover svg{transform:translateX(3px)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* TRUST */
+.trust{padding:26px 52px;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.trust-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.trust-logo{font-size:13px;font-weight:600;color:#b8cedd;letter-spacing:.05em;white-space:nowrap;transition:color .2s}
+.trust-logo:hover{color:var(--blue)}
+
+/* FEATURES */
+.features{padding:96px 52px;max-width:1200px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;font-weight:600}
+.sec-title{font-family:var(--fds);font-size:clamp(30px,4vw,50px);font-weight:400;line-height:1.1;letter-spacing:-.02em;max-width:540px;margin-bottom:52px;color:var(--text)}
+.sec-title em{font-style:italic;color:var(--blue)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:34px 28px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.card:hover{border-color:var(--blue-bd);box-shadow:0 8px 32px rgba(0,140,220,.1);transform:translateY(-3px)}
+.card-icon{width:46px;height:46px;border-radius:12px;background:var(--blue-lt);border:1px solid var(--blue-bd);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px}
+.card-title{font-size:16px;font-weight:600;margin-bottom:9px;color:var(--text)}
+.card-desc{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* STATS */
+.stats{padding:80px 52px;background:var(--blue)}
+.stats-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:48px;text-align:center}
+.stat-n{font-family:var(--fds);font-size:56px;font-weight:400;color:#fff;line-height:1;margin-bottom:8px}
+.stat-l{font-size:14px;color:rgba(255,255,255,.65)}
+
+/* CTA */
+.cta{padding:112px 52px;text-align:center;background:var(--off);position:relative;overflow:hidden}
+
+.cta h2{font-family:var(--fds);font-size:clamp(34px,5vw,62px);font-weight:400;letter-spacing:-.02em;line-height:1.1;max-width:620px;margin:0 auto 18px;color:var(--text);position:relative}
+.cta h2 em{font-style:italic;color:var(--blue)}
+.cta p{color:var(--muted);font-size:17px;margin-bottom:38px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-outline{background:#fff;color:var(--blue);font-size:15px;font-weight:600;font-family:var(--fbd);padding:14px 30px;border-radius:40px;text-decoration:none;border:1.5px solid var(--blue-bd);cursor:pointer;display:flex;align-items:center;gap:6px;transition:border-color .2s,background .2s,transform .15s}
+.btn-outline:hover{border-color:var(--blue);background:var(--blue-lt);transform:translateY(-2px)}
+.btn-outline svg{transition:transform .2s}
+.btn-outline:hover svg{transform:translateX(3px)}
+
+/* FOOTER */
+footer{padding:38px 52px;border-top:1px solid rgba(255,255,255,0.08);background:#0d1b2a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-links{display:flex;gap:28px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:#fff}
+.foot-copy{font-size:13px;color:rgba(255,255,255,0.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .features,.stats,.cta{padding:60px 20px}
+  footer{padding:28px 20px;flex-direction:column;align-items:flex-start}
+  .trust{padding:20px;gap:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.onevalley.com" style="display:inline-flex;align-items:center;text-decoration:none">
+    <img src="data:image/png;base64,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" alt="OneValley" style="height:24px;display:block">
+  </a>
+  <ul class="nav-links"></ul>
+  <div class="nav-cta">
+    <a href="https://passport.onevalley.com/login" class="btn-ghost">Log in</a>
+    <a href="https://passport.onevalley.com/newusersignup" class="btn-nav">Get started</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <h1 class="hero-title">Supporting Startups<br><em>Globally</em></h1>
+  <p class="hero-sub">See how we can support you.</p>
+  <div class="hero-pills">
+    <div class="pills-row">
+      <a onclick="window.open('https://ov-stage.gsvlabsportal.com/searchprogram','_blank');return false;" href="#" class="pill">🔭 Opportunities</a>
+      <a onclick="window.open('https://ov-stage.gsvlabsportal.com/program?pid=2449','_blank');return false;" href="#" class="pill">🎁 Free & Discounted AI Tools</a>
+      <a onclick="window.open('https://ov-stage.gsvlabsportal.com/program?pid=2450','_blank');return false;" href="#" class="pill">🤝 Hiring Support</a>
+    </div>
+    <div class="pills-row">
+      <a onclick="window.open('https://ov-stage.gsvlabsportal.com/program?pid=2451','_blank');return false;" href="#" class="pill">⚡ AI Infrastructure</a>
+      <a onclick="window.open('https://www.onevalley.com/contact-us-ventures-startups/','_blank');return false;" href="#" class="pill">💰 Funding</a>
+    </div>
+  </div>
+  <a href="https://www.onevalley.com/about/" class="btn-ghost2" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);white-space:nowrap">
+    Learn about OneValley
+    <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
+
+</section>
+
+
+<section class="features" id="support">
+  <div class="reveal">
+    <p class="eyebrow">What we offer</p>
+    <h2 class="sec-title">Everything your startup needs to <em>grow</em></h2>
+  </div>
+  <div class="grid reveal">
+    <div class="card" id="opportunities">
+      <div class="card-icon">🔭</div>
+      <div class="card-title">Opportunities</div>
+      <p class="card-desc">Discover accelerators, incubators, and programs tailored to your stage. Auto-apply with a single profile and skip the endless form-filling.</p>
+    </div>
+    <div class="card" id="perks">
+      <div class="card-icon">🎁</div>
+      <div class="card-title">Free & Discounted AI Tools</div>
+      <p class="card-desc">Unlock exclusive free and discounted access to leading AI tools and software — giving your startup the edge it needs without the enterprise price tag.</p>
+    </div>
+    <div class="card" id="hiring">
+      <div class="card-icon">🤝</div>
+      <div class="card-title">Hiring Support</div>
+      <p class="card-desc">Access talent networks, recruiting resources, and proven playbooks to help you build your team faster without the agency fees.</p>
+    </div>
+    <div class="card" id="ai">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">AI Infrastructure</div>
+      <p class="card-desc">Get connected to the compute, APIs, and AI tooling your startup needs to build and scale intelligent products from the ground up.</p>
+    </div>
+    <div class="card" id="funding">
+      <div class="card-icon">💰</div>
+      <div class="card-title">Funding</div>
+      <p class="card-desc">From Round Zero grants to venture introductions, we help you find non-dilutive capital and the right investors for your vision.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="stats">
+  <div class="stats-inner reveal">
+    <div><div class="stat-n">150+</div><div class="stat-l">Countries reached</div></div>
+    <div><div class="stat-n">10k+</div><div class="stat-l">Startups supported</div></div>
+    <div><div class="stat-n">500+</div><div class="stat-l">Partner programs</div></div>
+    <div><div class="stat-n">$2B+</div><div class="stat-l">Raised by our founders</div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2 class="reveal">Ready to accelerate your <em>growth?</em></h2>
+  <p class="reveal">Join thousands of founders already building with OneValley.</p>
+  <div class="cta-btns reveal">
+    <a href="https://passport.onevalley.com/newusersignup" class="btn-hero">Get started for free</a>
+    <a href="https://www.onevalley.com/brand_contact-us/" class="btn-outline">
+      Talk to our team
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.onevalley.com" style="display:inline-flex;align-items:center;text-decoration:none">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAXAL8DASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAAcEBQYBAwII/8QARRAAAQMCBQAGBQcGDwAAAAAAAQIDBAUGAAcREiEIEzFBUWEiMkJxgRQVFjNzgpEXIzU3srMYJDhSU1dicnWVoaax0+H/xAAaAQACAwEBAAAAAAAAAAAAAAAABQIDBAYB/8QANBEAAQMDAQQGCQUBAAAAAAAAAQIDBAARIQUSMUFxFSIyUWGBBhMUY5GiscLwIyVCcsHh/9oADAMBAAIRAxEAPwBZ0qm2ZknYNEuW6LeiXTf1wRxOptLqA3Q6bFV9W6637a1aagH3DaUkmIOlJmBIWY1Zo9pVejK9FdKk0hHyfZ3pAB1HHiT8cefTZbcczij1doE0qp0SDJpih6hY6oJAT94KPx88I3BRTpzftCzq7l3Dzdy0huU2mOShCrtEW4V/NkojUFBPJaV3d3KdNNSlOz6LkWypWQWYjF/oKaG9Uqew7KQkb4i3CW23we7YpYUT4buCCQctk427E6MOcVQqAIpcoU2LGCuxyUl4q9HzSFIJ8iPDHctf5H2bH+I0r9+jBRS3zYsOs5c3pKtusBLmwB2LKbH5qWwr1HUHvBH4EEd2GFQo0ZXQouKUqO0ZCbyZSl0oG8D5O3wD26cn8TiflZVabnBYjOTt2zGo1wwEqVZtXfPYrTmE4rt2K0AT4aADlKUn1+aKlQehzd9FrEN2HUIV9NsyGHBopC0sNgj/ANHB7RgoqZ0W63JtXJHNy6qZHhOVOnIpyoy5MdLqUlTjqTwfInFH/ClzP/obZ/ydvGh6K82hU7IvN+bc1EXXKQ0immVARJUwX09Y6AOsTynkg8eGM1Kv3o9LjOoYyGmtuqQQhf0plHarTg8nxwUUq6rc1Rqd5v3ZKEf5wfmGY4G2ghsrKtxASOAPLDBzkpsSsWxTLxpTSQ2W0peCQBohXq66d6VapPmrywpMNzJWoR6zb9Tsyonc2ptS2Qe3YrhQHuUQoe8+GHmjlL4chL/mMeChkfGuf1xKo5bno3tnPik4PwrNZM0AVq7m5Dze6JAAfc1HBV7Cfx5+6cRc2Ky1WLxk/JUoEWJ/F2tgACtpO5XHbqrX4aYYIjKy2yvl71oFWmOKQlST7atQnQ/2Ugq9+uE3SoMip1ONT4qdz8hxLaB5k9p8sTnNmJFbhAddXWV54A/ONVae4mbMdnk/po6qe7GVK/73U1ciLYZfp8+tVBkLbkoVEZSocFB+sPx4T8DhaXZR3aDcMylPanqHCEKPtIPKVfEEYcV/MVyi0ahUO1KbMfRDWh5xxpokHYfRCtO3crVRHu8cVWedHVOo1PupqM4y4lCW5Ta06KQlXKdw8QolJ94ww1DTkJheqQnrs2JPfftW5YpbpmqLVP8AXLUNh4kAXyNns3HC+fOsjku2hzMOClxCVp2O8KGo+rViNm2hDeYlWQ2hKEhbegSNB9WnEvJP9YsD7N392rEbN/8AWNVv77f7pGFZH7MD7z7abpJ6dI9191Z2kgKqsRKgCC+gEHv9IYZPSHZaaqlJ6ppCNWXNdqQNfSGFtR/0tD+3R+0MM3pGfpOkfYuftDBEA6Mkc0fWiaT0vFHgv6UqMPqLWo1sZT0erGltTT1TSCgqCNdwPOu0/wDGELh+x6hRKZlHRpNfgKnQ+paT1SW0rO4g6HRRAxo9HSUl5QUEkJ3nhnfWX0oSFBhKklQK9w3nBxWSqua8adTJUIWoy2ZDK2t/yoHbuSRrp1fOmuMplxcSLcuNuTJaS7CeHVSUlG4hJPrDzB58+Ri6vW47FqVAdi0K3XIU5S0lDyozaAkA88pUT2YwGM06c+mShwuhZTkEAActwrZp2nxlRVthkthWCCSTz3mmpmTYD8q4YlQtxlLsWquDds9RpZGu/j2CNVa+R8Ridf1TgWLbkO1qGlpVQKQt59TYUpI11Kjr7Sj3dw+GLDIyszJFoz4z6g4mnK/MFXaElJO0+QI/1wl6tPlVSpP1Ca6XZD6ytaj4+A8h2AeGGU2QxGj+0x02W98oHatzNKoEaRLk+yylXRH+Yns35D8NN+yMxLKuWwoOXOb8WoGFS1K+ZK/TwFSaclXa0tJ13tcDjkgAADgFNy9k9k3SIwrtZznmSqGdFNtRLcfbkPA+yFK1Sk9nJTp7sGDHJ12dY7OPM2m3FQ6XY1j0d2g2RR1qdjRXV7n5b511kPkagr5Og1Omp57AJViXPRIHRnzGtiVNLdWqc6nORGOqWesSh4KUdwG0aBJ7SMGDBRSnjvOx3232HVtPNqC23EKKVJUDqCCOwg9+P0jmBnJBzF6LcqnVZtDN3xqrD+cHUMkCeAhSUPlQGm/agJIP80acaAGDBRVR0Z6haMnLDMmybnuf6PLr6IKY8n5A7K0Da3FKO1H3RyR29+mPr8ieVH9ff+0JX/ZgwYKKSl10+BSblqNMpdUFWhRZK2mJojqZ69KToF9WrlOvgezHbTrDtAuKHVWtT1DgK0j2kHhSfiCcGDE23FNrC0mxGag62l1BbWLgix861GdFzN12vsxYbilQobY2nQjetQBUdDz2aD4HxxzJmTQqbW5NXrMsMrjNaR09UpfKtdyvRB00A0+9gwYZ+3OHUDJUAVXJzuxu+HClHR7SdMEVBISQBjfnfw48a7Uc1bqcnvuQpTTEZTiiy2WEEpRrwCSOTpjQ2ffke4KPVKLecpID7ejbqWDykjQjRA4IOhB8/LBgxONrMwPXUsqBvcEkjPhUJWhQSwQhsJItYgAEW8bVjsrp8GkX7FlTJITGbDqetCFEHVCgDoBrz7sMCvRcsa1Vn6nOqEkyHyCsoS6BwABxt8AMGDFunzSiOWVISpO1fIvm3OqNT08OSg+lxSVbNuqQMXv3UtbmaoNPvJsUN5xdOaW0vcsK1B4Ku0A4a92SsvLneYdqtRfUphJSjq0Op4J59nywYMew5xbLyNhJSo7iMYvuzRP08OpYX6xQUkEXBF8gXubUtsx4FoQUQfovIfdUsr68Ob+ANu31gPPG7pNUs2q5d0uiVqe4kNNI6xCG3AQpOveE4MGCPOLUlwpbTZQsRbHDhevJWnh6I0FuKuk3Cri988bVUVeiZXtUqW5EnSzJQwtTIPW8rCTt7U6dumFVgwYxak6lxSdlCU8hamGlMqaQracUv+xv/lM3J2v0mj0Kts1GV1LjuhQOrUrX0VDuBwssGDFcmSt2O02dyb28zVsWIhmS86km67X8hwr/2Q==" alt="OneValley" style="height:20px;display:block">
+  </a>
+  <div class="foot-links">
+    <a href="https://www.onevalley.com/about/">About</a>
+    <a href="https://www.onevalley.com/blog/">Blog</a>
+    <a href="https://www.onevalley.com/ventures/">Ventures</a>
+    <a href="https://www.onevalley.com/brand_contact-us/">Contact</a>
+  </div>
+  <span class="foot-copy">© 2025 OneValley. All rights reserved.</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+</script>
+</body>
+</html>
